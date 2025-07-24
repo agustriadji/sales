@@ -1,0 +1,5 @@
+{
+  "enable-api-cache": {
+    "enabled": true
+  }
+}

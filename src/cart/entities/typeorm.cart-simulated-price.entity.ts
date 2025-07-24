@@ -1,0 +1,35 @@
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  OneToOne,
+  PrimaryColumn,
+  Relation,
+} from 'typeorm';
+
+import { TypeOrmCartItemEntity } from './typeorm.cart-item.entity';
+
+@Entity({ schema: 'sales', name: 'cart_simulated_price' })
+export class TypeOrmCartSimulatedPriceEntity {
+  @PrimaryColumn({ type: 'uuid' })
+  readonly cartItemId: string;
+
+  @OneToOne('TypeOrmCartItemEntity', 'simulatedPrice')
+  @JoinColumn({ name: 'cart_item_id' })
+  readonly cartItem: Relation<TypeOrmCartItemEntity>;
+
+  @Column()
+  readonly subtotal: number;
+
+  @Column()
+  readonly total: number;
+
+  @Column()
+  readonly flashSaleDiscount: number;
+
+  @Column()
+  readonly regularDiscount: number;
+
+  @Column()
+  readonly lifetimeDiscount: number;
+}

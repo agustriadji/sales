@@ -1,0 +1,13 @@
+.dockerignore
+test-result
+coverage
+node_modules
+*.log
+Dockerfile
+.git
+.gitignore
+.db
+.jest
+.vscode
+*.xml
+*.md
